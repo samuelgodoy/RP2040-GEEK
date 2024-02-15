@@ -92,9 +92,12 @@ class EnhancedLCDController:
             self.current_y += self.line_height
 
     def list_py_files_and_exec(self, sd):
+        # Simulação do comando 'ls' antes da listagem de arquivos
+        self.draw_strings(["$ ls"])  # Exibe o comando 'ls' no display
         try:
             sd.mount("/sd")
             files = sd.listdir("/sd/")
+            # Agora lista os arquivos do SD
             for file in files:
                 if file.endswith('.py'):
                     self.draw_strings([file, f"$ python {file}"])
@@ -109,8 +112,9 @@ class EnhancedLCDController:
             print(f"Erro ao abrir SD: {e}")
 
     def display_terminal_sequence(self):
+        # Removido "$ ls" da sequência do terminal
         terminal_sequence = [
-            "ob@scorpion:~# /bin/sh", "$ ls", "$ exit ", "ob@scorpion:~#", "ob@scorpion:~# logout", "scorpion login: "
+            "ob@scorpion:~# logout", "scorpion login: "
         ]
         self.draw_strings(terminal_sequence)
 
