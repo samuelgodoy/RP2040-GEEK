@@ -50,3 +50,6 @@ O código contém classes para controle do LCD (`LCDController` e `EnhancedLCDCo
 3. Reinicie o microcontrolador para começar a execução.
 
 Lembre-se de que, para alterações no script ou no conteúdo do cartão SD, pode ser necessário desabilitar temporariamente o armazenamento USB para evitar conflitos.
+
+
+![Demonstração](demo.jpg)
