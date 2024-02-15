@@ -1,0 +1,4 @@
+import storage
+
+# Desabilita o armazenamento USB
+storage.disable_usb_drive()
